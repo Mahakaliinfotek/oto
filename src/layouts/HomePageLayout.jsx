@@ -2,6 +2,7 @@ import { Box } from "@mui/material";
 import React from "react";
 import Header from "./Header";
 import { Outlet } from "react-router-dom";
+import Footer from "../components/common/Footer";
 
 export const HomePageLayout = () => {
     return (
@@ -29,6 +30,7 @@ export const HomePageLayout = () => {
             >   
                 {/* <Header /> */}
                 <Outlet />
+                <Footer />
             </Box>
 
             {/* Footer – uncomment if needed */}

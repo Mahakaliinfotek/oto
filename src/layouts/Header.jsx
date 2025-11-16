@@ -28,9 +28,25 @@ export default function Header({ isDark = true }) {
     const navigate = useNavigate();
 
     const handleNavigate = (path) => {
-        navigate(path);
-        setOpen(false);
-    };
+    if (path === "/businesses") {
+        if (window.location.pathname === "/") {
+            // Already on homepage → scroll only
+            document.getElementById("businesses-section")?.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+            });
+        } else {
+            // Navigate to homepage → then scroll after load
+            navigate("/", { state: { scrollTo: "businesses-section" } });
+        }
+        return;
+    }
+
+    // Default navigation
+    navigate(path);
+    setOpen(false);
+};
+
 
     // Dynamic color based on input prop
     const textColor = isDark ? "white" : "#121212";
