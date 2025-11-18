@@ -17,6 +17,7 @@ import CoreOfferings from "../components/homepage/CoreOfferings";
 import USPsSection from "../components/homepage/USPsSection";
 import Achievements from "../components/homepage/Achievements";
 import ClientsScroller from "../components/homepage/ClientScroller";
+import CoreOfferings2 from "../components/homepage/CoreOfferings2";
 
 const HomePage = () => {
     const scrollToSection = (id) => {
@@ -60,8 +61,8 @@ const HomePage = () => {
                 }}>
                     <Box id="business-focus"><BusinessFocus /></Box>
                     <Box id="stats"><StatsSection /></Box>
-                    <Box id="core-offerings"><CoreOfferings /></Box>
                     <Box id="usps"><USPsSection /></Box>
+                    <Box id="core-offerings"><CoreOfferings2 /></Box>
                     <Box id="achievements"><Achievements /></Box>
                     <Box id="clients"><ClientsScroller /></Box>
 
