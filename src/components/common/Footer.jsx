@@ -37,11 +37,10 @@ Kolkata – 700001`,
     social: {
         username: "@_mahakaliudyog",
         links: [
-            { icon: "facebook", url: "#" },
-            { icon: "x", url: "#" },
-            { icon: "google", url: "#" },
-            { icon: "instagram", url: "#" },
-            { icon: "linkedin", url: "#" },
+            { icon: "facebook", url: "https://www.facebook.com/Mahakaliudyog/" },
+            { icon: "x", url: "https://x.com/mahakaliudyog" },
+            { icon: "instagram", url: "https://www.instagram.com/_mahakaliudyog/" },
+            { icon: "linkedin", url: "https://www.linkedin.com/company/mahakali-udyog-pvt-ltd/?originalSubdomain=in" },
         ],
     },
 
@@ -149,9 +148,9 @@ export default function Footer() {
                             <Box
                                 key={i}
                                 component="a"
-                                // href={item.url}
-                                // target="_blank"
-                                // rel="noopener noreferrer"
+                                href={item.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 sx={iconStyle}
                             >
                                 {getIcon(item.icon)}

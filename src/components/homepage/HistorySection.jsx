@@ -70,17 +70,25 @@ export default function HistorySection() {
                 <Box
                     sx={{
                         flex: 1,
-                        background: "#1B335B",
-                        p: { xs: 3, md: 4 },
-                        textAlign: "left",
+                        background: "#00445B",
+                        px: { xs: 3, md: 5 },
+                        py: { xs: 3, md: 4 },
+                        textAlign: "center",
                         color: "#fff",
+                        display:"flex",
+                        justifyContent:"space-between",
+                        alignItems:"center",
+                        flexDirection:"column"
                     }}
+                    // border={1}
                 >
                     <Typography
                         sx={{
                             fontWeight: 700,
                             fontSize: 20,
                             mb: 1.5,
+                            maxWidth:"300px",
+                            
                         }}
                     >
                         From One Desk in Kolkata to a Global Resource Network
@@ -91,10 +99,10 @@ export default function HistorySection() {
                             fontSize: 15,
                             lineHeight: 1.6,
                             opacity: 0.95,
+                            textAlign:"left"
                         }}
                     >
-                        What began in 1984 with a small trading desk is now a diversified group operating across mining, logistics, imports, exports, and digital commerce.
-                        For four decades, we’ve expanded from India’s eastern coal belt to global mineral hubs, combining traditional expertise with next-gen platforms like Indiazona.
+                        What began in <b>1984</b> as a humble trading firm is now a diversified conglomerate operating across mining, logistics, imports, exports, and digital commerce.For <b>four decades</b>, we’ve expanded from India’s eastern coal belt to global mineral hubs, combining traditional expertise with next-gen platforms like Indiazona.
 
 
                     </Typography>
@@ -106,14 +114,14 @@ export default function HistorySection() {
                             display: "flex",
                             alignItems: "center",
                             gap: 1,
-                            fontSize: 15,
-                            fontWeight: 500,
+                            fontSize: 18,
+                            // fontWeight: 500,
                             cursor: "pointer",
                         }}
 
                         onClick={() => navigate("/about-us")}
                     >
-                        Click to Read More
+                        Discover Our Journey
                         <ArrowForwardIcon fontSize="small" />
                     </Typography>
                 </Box>
