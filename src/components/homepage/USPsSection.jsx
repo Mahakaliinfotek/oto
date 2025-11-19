@@ -19,7 +19,7 @@ export default function USPsSection() {
                     fontFamily: "Inter",
                 }}
             >
-                What makes us different (USPs)
+                What makes us different 
             </Typography>
 
             {/* ROW 1 — FLEET OWNERS */}
