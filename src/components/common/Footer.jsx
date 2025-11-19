@@ -112,7 +112,7 @@ export default function Footer() {
                         </Typography>
                     </Box>
 
-                    <Box>
+                    {/* <Box>
                         <Typography sx={{ fontWeight: 600, fontSize: "16px", mb: 1 }}>
                             {headOffice.title}
                         </Typography>
@@ -120,7 +120,7 @@ export default function Footer() {
                             {headOffice.address}
                             <br />Tel – {headOffice.phone}
                         </Typography>
-                    </Box>
+                    </Box> */}
                 </Box>
 
                 {/* CONTACT + SOCIAL */}
