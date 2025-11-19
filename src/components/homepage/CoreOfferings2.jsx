@@ -157,6 +157,14 @@ export default function CoreOfferings2() {
                                     justifyContent: "center",
                                     boxShadow: '0px 6px 8px rgba(0, 0, 0, 0.20)',
                                     height: "100%",
+                                    // COMMENT: add smooth animation
+                                    transition: "transform 0.25s ease, box-shadow 0.25s ease",
+
+                                    // COMMENT: add the pop hover effect
+                                    "&:hover": {
+                                        transform: "scale(1.03)",
+                                        boxShadow: "0px 10px 16px rgba(0,0,0,0.18)",
+                                    }
                                 }}
                             >
                                 <Typography
@@ -199,6 +207,14 @@ export default function CoreOfferings2() {
                                             justifyContent: "flex-start",
                                             boxShadow: '0px 6px 8px rgba(0, 0, 0, 0.20)',
                                             height: "100%",
+                                            // COMMENT: add smooth animation
+                                            transition: "transform 0.25s ease, box-shadow 0.25s ease",
+
+                                            // COMMENT: add the pop hover effect
+                                            "&:hover": {
+                                                transform: "scale(1.03)",
+                                                boxShadow: "0px 10px 16px rgba(0,0,0,0.18)",
+                                            }
                                         }}
                                     >
                                         <Typography
@@ -241,6 +257,14 @@ export default function CoreOfferings2() {
                                             justifyContent: "center",
                                             boxShadow: '0px 6px 8px rgba(0, 0, 0, 0.20)',
                                             height: "100%",
+                                            // COMMENT: add smooth animation
+                                            transition: "transform 0.25s ease, box-shadow 0.25s ease",
+
+                                            // COMMENT: add the pop hover effect
+                                            "&:hover": {
+                                                transform: "scale(1.03)",
+                                                boxShadow: "0px 10px 16px rgba(0,0,0,0.18)",
+                                            }
                                         }}
                                     >
                                         <Typography
@@ -281,6 +305,14 @@ export default function CoreOfferings2() {
                                             justifyContent: "center",
                                             boxShadow: '0px 6px 8px rgba(0, 0, 0, 0.20)',
                                             height: "100%",
+                                            // COMMENT: add smooth animation
+                                            transition: "transform 0.25s ease, box-shadow 0.25s ease",
+
+                                            // COMMENT: add the pop hover effect
+                                            "&:hover": {
+                                                transform: "scale(1.03)",
+                                                boxShadow: "0px 10px 16px rgba(0,0,0,0.18)",
+                                            }
                                         }}
                                     >
                                         <Typography
@@ -326,6 +358,14 @@ export default function CoreOfferings2() {
                                     justifyContent: "flex-start",
                                     boxShadow: '0px 6px 8px rgba(0, 0, 0, 0.20)',
                                     height: "100%",
+                                    // COMMENT: add smooth animation
+                                    transition: "transform 0.25s ease, box-shadow 0.25s ease",
+
+                                    // COMMENT: add the pop hover effect
+                                    "&:hover": {
+                                        transform: "scale(1.03)",
+                                        boxShadow: "0px 10px 16px rgba(0,0,0,0.18)",
+                                    }
                                 }}
                             >
                                 <Typography
@@ -366,6 +406,14 @@ export default function CoreOfferings2() {
                                     justifyContent: "flex-start",
                                     boxShadow: '0px 6px 8px rgba(0, 0, 0, 0.20)',
                                     height: "100%",
+                                    // COMMENT: add smooth animation
+                                    transition: "transform 0.25s ease, box-shadow 0.25s ease",
+
+                                    // COMMENT: add the pop hover effect
+                                    "&:hover": {
+                                        transform: "scale(1.03)",
+                                        boxShadow: "0px 10px 16px rgba(0,0,0,0.18)",
+                                    }
                                 }}
                             >
                                 <Typography
@@ -410,6 +458,14 @@ export default function CoreOfferings2() {
                                 justifyContent: "center",
                                 boxShadow: '0px 6px 8px rgba(0, 0, 0, 0.20)',
                                 height: "100%",
+                                // COMMENT: add smooth animation
+                                transition: "transform 0.25s ease, box-shadow 0.25s ease",
+
+                                // COMMENT: add the pop hover effect
+                                "&:hover": {
+                                    transform: "scale(1.03)",
+                                    boxShadow: "0px 10px 16px rgba(0,0,0,0.18)",
+                                }
                             }}
                         >
                             <Typography
@@ -445,7 +501,7 @@ export default function CoreOfferings2() {
                     bgcolor: "#1B335B",
                     borderRadius: "12px",
                     p: { xs: 2.5, md: 4 },
-                    flexDirection:"column",
+                    flexDirection: "column",
                     color: "#fff",
                 }}
             >
@@ -456,7 +512,7 @@ export default function CoreOfferings2() {
                         fontWeight: 700,
                         mb: 1.5,
                         fontFamily: "Inter",
-                        
+
                     }}
                 >
                     Stevedoring & Port Handling
@@ -613,6 +669,14 @@ export default function CoreOfferings2() {
                                 display: "flex",
                                 flexDirection: "column",
                                 justifyContent: "flex-start",
+                                // COMMENT: add smooth animation
+                                transition: "transform 0.25s ease, box-shadow 0.25s ease",
+
+                                // COMMENT: add the pop hover effect
+                                "&:hover": {
+                                    transform: "scale(1.03)",
+                                    boxShadow: "0px 10px 16px rgba(0,0,0,0.18)",
+                                }
                             }}
                         >
                             <Typography
@@ -664,6 +728,14 @@ export default function CoreOfferings2() {
                                     display: "flex",
                                     flexDirection: "column",
                                     justifyContent: "flex-start",
+                                    // COMMENT: add smooth animation
+                                    transition: "transform 0.25s ease, box-shadow 0.25s ease",
+
+                                    // COMMENT: add the pop hover effect
+                                    "&:hover": {
+                                        transform: "scale(1.03)",
+                                        boxShadow: "0px 10px 16px rgba(0,0,0,0.18)",
+                                    }
                                 }}
                             >
                                 <Typography
@@ -690,10 +762,10 @@ export default function CoreOfferings2() {
                     })}
                 </Box>
             </Box>
-                        {/* BOTTOM DARK SECTION MOBILE*/}
+            {/* BOTTOM DARK SECTION MOBILE*/}
             <Box
                 sx={{
-                   display: { xs: "flex", md: "none" },
+                    display: { xs: "flex", md: "none" },
                     flexDirection: "column",
                     mt: 3,
                     bgcolor: "#1B335B",
@@ -767,7 +839,7 @@ export default function CoreOfferings2() {
                                         display: "flex",
                                         alignItems: "center",
                                         justifyContent: "center",
-                                        mt:-5
+                                        mt: -5
                                     }}
                                 >
                                     <Box
@@ -827,7 +899,7 @@ export default function CoreOfferings2() {
                                         display: "flex",
                                         alignItems: "center",
                                         justifyContent: "center",
-                                         mt:-5
+                                        mt: -5
                                     }}
                                 >
                                     <Box
@@ -886,7 +958,7 @@ export default function CoreOfferings2() {
                             display: "flex",
                             alignItems: "center",
                             justifyContent: "center",
-                             mt:-5
+                            mt: -5
                         }}
                     >
                         <Box
@@ -905,7 +977,7 @@ export default function CoreOfferings2() {
                         {valueCards[4].desc}
                     </Typography>
                 </Box>
-                 {/* Bottom paragraph */}
+                {/* Bottom paragraph */}
                 <Typography
                     sx={{
                         mt: 3,
@@ -914,7 +986,7 @@ export default function CoreOfferings2() {
                         fontFamily: "Inter",
                         lineHeight: 1.5,
                         fontWeight: 600,
-                        textAlign:"center"
+                        textAlign: "center"
                     }}
                 >
                     Proximity to group stevedoring and transport operations enables faster cargo evacuation and predictable
@@ -922,9 +994,9 @@ export default function CoreOfferings2() {
                     industrial supply chain.
                 </Typography>
             </Box>
-        
 
-        
+
+
         </Box>
     );
 }

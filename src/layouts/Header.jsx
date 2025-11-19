@@ -15,6 +15,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/mg-logo.png"
+import logo1 from "../assets/images/companyStrip/oto.png"
 
 // Centralized Menu With Links
 const menuItems = [
@@ -77,10 +78,11 @@ export default function Header({ isDark = true }) {
                         {/* Logo */}
                         <Box
                           component="img"
-                          src={logo}
+                          src={logo1}
                           sx={{
                             width:"120px",
-                            cursor: "pointer"
+                            cursor: "pointer",
+                            background:"white"
                           }}
                           onClick={() => navigate("/")}
                         />
