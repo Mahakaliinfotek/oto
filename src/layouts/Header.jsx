@@ -15,7 +15,6 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/mg-logo.png"
-import logo1 from "../assets/images/companyStrip/oto.png"
 
 // Centralized Menu With Links
 const menuItems = [
@@ -42,6 +41,19 @@ export default function Header({ isDark = true }) {
         }
         return;
     }
+    if (path === "/contact-us") {
+        if (window.location.pathname === "/") {
+            // Already on homepage → scroll only
+            document.getElementById("contact-section")?.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+            });
+        } else {
+            // Navigate to homepage → then scroll after load
+            navigate("/", { state: { scrollTo: "contact-section" } });
+        }
+        return;
+    }
 
     // Default navigation
     navigate(path);
@@ -62,7 +74,7 @@ export default function Header({ isDark = true }) {
                 sx={{
                     backgroundColor: "transparent",
                     boxShadow: "none",
-                    px: { xs: 2, md: 6 },
+                    px: { xs: 1, md: 6 },
                     // maxWidth:"1600px"
                 }}
             >
@@ -78,11 +90,10 @@ export default function Header({ isDark = true }) {
                         {/* Logo */}
                         <Box
                           component="img"
-                          src={logo1}
+                          src={logo}
                           sx={{
                             width:"120px",
-                            cursor: "pointer",
-                            background:"white"
+                            cursor: "pointer"
                           }}
                           onClick={() => navigate("/")}
                         />
@@ -113,7 +124,9 @@ export default function Header({ isDark = true }) {
                             {/* CTA Button */}
                             <Button
                                 variant="contained"
-                                onClick={() => handleNavigate("/contact")}
+                                // component="a"
+                                // href={`mailto:info@mahakaliudyog.com`}
+                                onClick={() => handleNavigate("/contact-us")}
                                 sx={{
                                     background: ctaBg,
                                     textTransform: "none",
@@ -175,7 +188,8 @@ export default function Header({ isDark = true }) {
                     ))}
 
                     {/* Contact Us Inside Drawer */}
-                    <ListItemButton onClick={() => handleNavigate("/contact")} sx={{ mt: 2 }}>
+                    <ListItemButton component="a"
+                                href={`mailto:info@mahakaliudyog.com`} sx={{ mt: 2 }}>
                         <ListItemText
                             primary="Contact Us"
                             primaryTypographyProps={{

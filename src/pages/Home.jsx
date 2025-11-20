@@ -18,7 +18,7 @@ import USPsSection from "../components/homepage/USPsSection";
 import Achievements from "../components/homepage/Achievements";
 import ClientsScroller from "../components/homepage/ClientScroller";
 import CoreOfferings2 from "../components/homepage/CoreOfferings2";
-
+import ContactUs from "../components/homepage/ContactUs"
 const HomePage = () => {
     const scrollToSection = (id) => {
         const el = document.getElementById(id);
@@ -76,6 +76,7 @@ const HomePage = () => {
             <SustainabilitySection />
             <MediaCSRSection />
             <CompanyStrip />
+            <ContactUs/>
             {/* MOBILE HAMBURGER FLOAT BUTTON */}
             <IconButton
                 onClick={() => setOpenSidebar(true)}
