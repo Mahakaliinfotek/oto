@@ -14,7 +14,7 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { useNavigate } from "react-router-dom";
-import logo from "../assets/mg-logo.png"
+import logo from "../assets/images/companyStrip/oto.png"
 
 // Centralized Menu With Links
 const menuItems = [
@@ -28,37 +28,37 @@ export default function Header({ isDark = true }) {
     const navigate = useNavigate();
 
     const handleNavigate = (path) => {
-    if (path === "/businesses") {
-        if (window.location.pathname === "/") {
-            // Already on homepage → scroll only
-            document.getElementById("businesses-section")?.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-            });
-        } else {
-            // Navigate to homepage → then scroll after load
-            navigate("/", { state: { scrollTo: "businesses-section" } });
+        if (path === "/businesses") {
+            if (window.location.pathname === "/") {
+                // Already on homepage → scroll only
+                document.getElementById("businesses-section")?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                });
+            } else {
+                // Navigate to homepage → then scroll after load
+                navigate("/", { state: { scrollTo: "businesses-section" } });
+            }
+            return;
         }
-        return;
-    }
-    if (path === "/contact-us") {
-        if (window.location.pathname === "/") {
-            // Already on homepage → scroll only
-            document.getElementById("contact-section")?.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-            });
-        } else {
-            // Navigate to homepage → then scroll after load
-            navigate("/", { state: { scrollTo: "contact-section" } });
+        if (path === "/contact-us") {
+            if (window.location.pathname === "/") {
+                // Already on homepage → scroll only
+                document.getElementById("contact-section")?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                });
+            } else {
+                // Navigate to homepage → then scroll after load
+                navigate("/", { state: { scrollTo: "contact-section" } });
+            }
+            return;
         }
-        return;
-    }
 
-    // Default navigation
-    navigate(path);
-    setOpen(false);
-};
+        // Default navigation
+        navigate(path);
+        setOpen(false);
+    };
 
 
     // Dynamic color based on input prop
@@ -89,14 +89,19 @@ export default function Header({ isDark = true }) {
                     <Toolbar sx={{ justifyContent: "space-between" }}>
                         {/* Logo */}
                         <Box
-                          component="img"
-                          src={logo}
-                          sx={{
-                            width:"120px",
-                            cursor: "pointer"
-                          }}
-                          onClick={() => navigate("/")}
-                        />
+                            onClick={() => navigate("/")}
+                            sx={{ display: "flex", background: "#fff", height: "50px", width: "130px", justifyContent: "center", alignItems: "center" }}>
+                            <Box
+                                component="img"
+                                src={logo}
+                                sx={{
+                                    height: "45px",
+                                    cursor: "pointer",
+
+                                }}
+
+                            />
+                        </Box>
 
                         {/* Desktop Menu */}
                         <Box
@@ -189,7 +194,7 @@ export default function Header({ isDark = true }) {
 
                     {/* Contact Us Inside Drawer */}
                     <ListItemButton component="a"
-                                href={`mailto:info@mahakaliudyog.com`} sx={{ mt: 2 }}>
+                        href={`mailto:info@mahakaliudyog.com`} sx={{ mt: 2 }}>
                         <ListItemText
                             primary="Contact Us"
                             primaryTypographyProps={{
