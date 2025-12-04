@@ -58,6 +58,7 @@ const HomePage = () => {
                     "&::-webkit-scrollbar": {
                         display: "none",            // Chrome/Safari
                     },
+                    px:{xs:0,md:2}
                 }}>
                     <Box id="business-focus"><BusinessFocus /></Box>
                     <Box id="stats"><StatsSection /></Box>
