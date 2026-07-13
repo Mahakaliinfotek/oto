@@ -64,11 +64,11 @@ export default function AchievementsSection() {
           sx={{
             color: "#FFFFFF",
             fontSize: {
-              xs: "26px",
+              xs: "18px",
               md: "42px",
             },
             lineHeight: 1.15,
-            fontWeight: 800,
+            fontWeight: { xs: 500, md: 700 },
             letterSpacing: {
               xs: "-0.4px",
               md: "-0.8px",
@@ -182,12 +182,13 @@ function AchievementRow({ item, isLast }) {
                 md: 72,
               },
               bottom: {
-                xs:-40,
+                xs: -40,
                 md: -25,
               },
               left: "50%",
               transform: "translateX(-50%)",
               width: "1px",
+              height: "100%",
               bgcolor: "rgba(255,255,255,0.22)",
             }}
           />
@@ -205,14 +206,16 @@ function AchievementRow({ item, isLast }) {
               md: 72,
             },
             borderRadius: "50%",
-            bgcolor: "rgba(175, 175, 175, 0.47)",
-            border: "1px solid rgba(255,255,255,0.9)",
+            bgcolor: "rgba(255, 255, 255, 0.15)", // semi-transparent
+            backdropFilter: "blur(10px)",
+            WebkitBackdropFilter: "blur(10px)", // Safari
+            border: "1px solid rgba(255,255,255,0.3)",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
             color: "#FFFFFF",
             fontSize: {
-              xs: "18px",
+              xs: "12px",
               md: "20px",
             },
             fontWeight: 800,
@@ -236,9 +239,12 @@ function AchievementRow({ item, isLast }) {
             xs: 2.3,
             md: 2.2,
           },
-          borderBottom: !isLast
-            ? "1px solid rgba(255,255,255,0.12)"
-            : "none",
+          borderBottom: {
+            xs: "none",
+            md: !isLast
+              ? "1px solid rgba(255,255,255,0.12)"
+              : "none",
+          }
         }}
       >
         <Typography
@@ -246,14 +252,14 @@ function AchievementRow({ item, isLast }) {
           sx={{
             color: "#FFFFFF",
             fontSize: {
-              xs: "19px",
+              xs: "14px",
               md: "17px",
             },
             lineHeight: {
               xs: 1.3,
               md: 1.35,
             },
-            fontWeight: 700,
+            fontWeight: { xs: 500, md: 700 },
             mb: {
               xs: 1.2,
               md: 0.7,
@@ -267,7 +273,7 @@ function AchievementRow({ item, isLast }) {
           sx={{
             color: "rgba(255,255,255,0.96)",
             fontSize: {
-              xs: "15px",
+              xs: "12px",
               md: "13.5px",
             },
             lineHeight: {

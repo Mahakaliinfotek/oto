@@ -360,11 +360,11 @@ export default function DifferenceSection() {
                                     component="h3"
                                     sx={{
                                         fontSize: {
-                                            xs: "17px",
+                                            xs: "14px",
                                             md: "16px",
                                         },
                                         lineHeight: 1.3,
-                                        fontWeight: 700,
+                                        fontWeight: {xs:500,md:700},
                                         mb: {
                                             xs: 1,
                                             md: 1.1,
@@ -377,7 +377,7 @@ export default function DifferenceSection() {
                                 <Typography
                                     sx={{
                                         fontSize: {
-                                            xs: "15px",
+                                            xs: "12px",
                                             md: "13.5px",
                                         },
                                         lineHeight: {

@@ -79,8 +79,8 @@ export default function StevedoringSection() {
             sx={{
               color: "#19365E",
               fontSize: {
-                xs: "22px",
-                sm: "26px",
+                xs: "20px",
+                sm: "22px",
                 md: "40px",
               },
               lineHeight: 1.2,
@@ -110,7 +110,7 @@ export default function StevedoringSection() {
               },
               color: "#19365E",
               fontSize: {
-                xs: "15px",
+                xs: "12px",
                 md: "16px",
               },
               lineHeight: {
@@ -216,9 +216,41 @@ export default function StevedoringSection() {
               xs: 2.5,
               md: 2.7,
             },
+            transition:
+              "transform 280ms ease, border-color 280ms ease, box-shadow 280ms ease",
+            "&:hover": {
+              transform: {
+                xs: "none",
+                md: "translateY(-6px)",
+              },
+              borderColor: {
+                xs: "#19365E",
+                md: "#FF8A16",
+              },
+              boxShadow: {
+                xs: "none",
+                md: "0 10px 22px rgba(25,54,94,0.14)",
+              },
+
+              "& .bottom-icon": {
+                bgcolor: "#FF8A16",
+                transform: {
+                  xs: "none",
+                  md: "scale(1.06)",
+                },
+              },
+
+              "& .bottom-icon-image": {
+                transform: {
+                  xs: "none",
+                  md: "scale(1.08)",
+                },
+              },
+            },
           }}
         >
           <Box
+            className='bottom-icon'
             sx={{
               width: 42,
               height: 42,
@@ -231,12 +263,13 @@ export default function StevedoringSection() {
             }}
           >
             <Box
+              className="bottom-icon-image"
               component="img"
               src="/homePage/proximity.webp"
               alt=""
               sx={{
-                width: 30,
-                height: 30,
+                width: 40,
+                height: 40,
                 objectFit: "contain",
               }}
             />
@@ -276,7 +309,7 @@ function StevedoringCard({ card }) {
       sx={{
         position: "relative",
         minHeight: {
-          xs: "345px",
+          xs: "285px",
           md: "285px",
         },
         height: "100%",
@@ -339,11 +372,11 @@ function StevedoringCard({ card }) {
         className="stevedoring-icon"
         sx={{
           width: {
-            xs: 46,
+            xs: 38,
             md: 40,
           },
           height: {
-            xs: 46,
+            xs: 38,
             md: 40,
           },
           bgcolor: {
@@ -369,11 +402,11 @@ function StevedoringCard({ card }) {
           alt=""
           sx={{
             width: {
-              xs: 30,
+              xs: 28,
               md: 27,
             },
             height: {
-              xs: 30,
+              xs: 28,
               md: 27,
             },
             objectFit: "contain",
@@ -387,7 +420,7 @@ function StevedoringCard({ card }) {
         sx={{
           color: "#19365E",
           fontSize: {
-            xs: "20px",
+            xs: "18px",
             md: "14px",
           },
           lineHeight: {
@@ -408,7 +441,7 @@ function StevedoringCard({ card }) {
         sx={{
           color: "#19365E",
           fontSize: {
-            xs: "17px",
+            xs: "14px",
             md: "12px",
           },
           lineHeight: {

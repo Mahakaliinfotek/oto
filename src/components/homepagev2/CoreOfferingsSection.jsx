@@ -15,28 +15,28 @@ const offerings = [
         title: "Long-distance bulk transportation",
         description:
             "Long-distance bulk transportation in trucks, trailers, & tippers; intra-plant movement & coal-yard management.",
-        icon: "/homePage/cargo.webp",
+        icon: "/homePage/truck.webp",
     },
     {
         id: "rake-operations",
         title: "Rake operations",
         description:
             "Rake operations including loading, unloading, and sealing tarpaulin cover for trucks and rakes.",
-        icon: "/homePage/rake-operations.webp",
+        icon: "/homePage/train.webp",
     },
     {
         id: "multimodal-logistics",
         title: "Multimodal logistics",
         description:
             "Vessel discharge to inland destination, rake programs, and inland waterways where viable.",
-        icon: "/homePage/multimodal-logistics.webp",
+        icon: "/homePage/ship-globe.webp",
     },
     {
         id: "cargo-breadth",
         title: "Cargo breadth",
         description:
             "Coal, coke, manganese ore, iron-ore fines, stone aggregates, containers, project & heavy-lift cargo, agro products, minerals, & metals.",
-        icon: "/homePage/cargo-breadth.webp",
+        icon: "/homePage/ship.webp",
     },
     {
         id: "rail-road",
@@ -315,6 +315,7 @@ function OfferingCard({ offering, desktop = false }) {
                             xs: "none",
                             md: "scale(1.08)",
                         },
+                        filter:"none",
                     },
                 },
             }}
@@ -368,14 +369,15 @@ function OfferingCard({ offering, desktop = false }) {
                     sx={{
                         width: {
                             xs: 40,
-                            md: 31,
+                            md:40,
                         },
                         height: {
                             xs: 40,
-                            md: 31,
+                            md: 40,
                         },
                         objectFit: "contain",
                         transition: "transform 300ms ease",
+                        filter:desktop?"invert(1) brightness(0)":"none",
                     }}
                 />
             </Box>
@@ -390,7 +392,7 @@ function OfferingCard({ offering, desktop = false }) {
                             md: "16px",
                         },
                         lineHeight: 1.3,
-                        fontWeight: 700,
+                        fontWeight: {xs:400,md:600},
                         mb: {
                             xs: 1,
                             md: 1.5,
