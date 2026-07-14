@@ -3,6 +3,7 @@ import { Box, Container, Typography } from "@mui/material";
 const stevedoringCards = [
   {
     id: "bulk-cargo",
+    showInDesktop: true,
     title: "Bulk-cargo expertise",
     description:
       "Handling coal, minerals & other heavy commodities with precision and operational rigor.",
@@ -10,6 +11,7 @@ const stevedoringCards = [
   },
   {
     id: "optimized-discharge",
+    showInDesktop: true,
     title: "Optimized discharge rate",
     description:
       "Engineered workflows and equipment ensure rapid and predictable vessel turnaround, minimising berth time.",
@@ -17,6 +19,7 @@ const stevedoringCards = [
   },
   {
     id: "zero-demurrage",
+    showInDesktop: true,
     title: "Zero demurrage focus",
     description:
       "Proactive planning, berth readiness and liaison with terminal and rail logistics ensure demurrage is mitigated.",
@@ -24,6 +27,7 @@ const stevedoringCards = [
   },
   {
     id: "secured-storage",
+    showInDesktop: true,
     title: "Secured storage & custom-bonding",
     description:
       "Dedicated bonded yards and secure storage facilities ensure integrity of cargo and regulatory compliance. 24x7 CCTV surveillance along with trained security guards.",
@@ -31,10 +35,19 @@ const stevedoringCards = [
   },
   {
     id: "cha-services",
+    showInDesktop: true,
     title: "CHA services & authorities liaison",
     description:
       "We provide Custom House Agent (CHA) activities, document clearance and direct coordination with port trust and terminals for smooth cargo flow.",
     icon: "/homePage/cha-services.webp",
+  },
+  {
+    id: " proximity-to-group",
+    showInDesktop: false,
+    title: "Proximity to group stevedoring and transport operations",
+    description:
+      "enables faster cargo evacuation &amp; predictable arrivals, strengthening our delivery assurance and end-to-end logistics capabilities across India’s industrial supply chain.",
+    icon: "/homePage/proximity.webp",
   },
 ];
 
@@ -189,7 +202,8 @@ export default function StevedoringSection() {
               xs: 4,
               md: 5.5,
             },
-            display: "flex",
+            // display: "flex",
+            display: { xs: "none", md: "flex" },
             flexDirection: {
               xs: "column",
               sm: "row",
@@ -255,6 +269,7 @@ export default function StevedoringSection() {
               width: 42,
               height: 42,
               borderRadius: "8px",
+
               bgcolor: "#19365E",
               display: "flex",
               alignItems: "center",
@@ -308,6 +323,7 @@ function StevedoringCard({ card }) {
     <Box
       sx={{
         position: "relative",
+        display: { xs: "inherit", md: card.showInDesktop ? "block" : "none" },
         minHeight: {
           xs: "285px",
           md: "285px",
@@ -342,26 +358,20 @@ function StevedoringCard({ card }) {
             xs: "none",
             md: "translateY(-6px)",
           },
-          borderColor: {
-            xs: "#19365E",
-            md: "#FF8A16",
-          },
-          boxShadow: {
-            xs: "none",
-            md: "0 10px 22px rgba(25,54,94,0.14)",
-          },
+          borderColor:"#FF8A16",
+          boxShadow: "0 10px 22px rgba(25,54,94,0.14)",
 
           "& .stevedoring-icon": {
             bgcolor: "#FF8A16",
             transform: {
-              xs: "none",
+              xs: "scale(1.06)",
               md: "scale(1.06)",
             },
           },
 
           "& .stevedoring-icon-image": {
             transform: {
-              xs: "none",
+              xs: "scale(1.08)",
               md: "scale(1.08)",
             },
           },
@@ -379,10 +389,7 @@ function StevedoringCard({ card }) {
             xs: 38,
             md: 40,
           },
-          bgcolor: {
-            xs: "#FF8A16",
-            md: "#19365E",
-          },
+          bgcolor:  "#19365E",
           borderRadius: "8px",
           display: "flex",
           alignItems: "center",
