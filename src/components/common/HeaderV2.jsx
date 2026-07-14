@@ -17,7 +17,7 @@ import PhoneRoundedIcon from "@mui/icons-material/PhoneRounded";
 const navigationItems = [
     {
         label: "Our Story",
-        path: "/our-story",
+        path: "/about-us",
         icon: GroupsRoundedIcon,
     },
     {
@@ -37,7 +37,7 @@ const navigationItems = [
     },
     {
         label: "Contact",
-        path: "/contact",
+        path: "/",
         icon: PhoneRoundedIcon,
     },
 ];
@@ -174,7 +174,7 @@ export default function HeaderV2() {
 
                         <Button
                             component={Link}
-                            to="/contact"
+                            to="#"
                             disableElevation
                             sx={{
                                 minWidth: 112,

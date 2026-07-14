@@ -66,6 +66,7 @@ export default function CoreOfferingsSection() {
     return (
         <Box
             component="section"
+            id="core-offerings"
             sx={{
                 position: "relative",
                 bgcolor: "#1C3A65",

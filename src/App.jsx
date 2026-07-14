@@ -19,8 +19,8 @@ function App() {
       <Route path="/story" element={<Story/>}/>
       <Route path="/about-us" element={<Story/>}/>
       <Route path="/" element={<HomePageLayout />}>
-        <Route path="/" element={<HomePage />} />
-        <Route path="home-page-v2" element={<HomePageV2 />} />
+        <Route path="/" element={<HomePageV2 />} />
+        <Route path="/home-page-v2" element={<HomePageV2 />} />
         
         <Route path="/legacy-leadership" element={<LegacyLeadershipPage/>} />
         <Route path="/sustainability" element={<Sustainability/>} />

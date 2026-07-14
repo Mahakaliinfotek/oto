@@ -1,5 +1,7 @@
 import { Box, Button, Container, Typography } from "@mui/material";
 import RevealAnimation from "../Animations/RevealAnimation";
+import AnimatedCounter from "../Animations/AnimatedCounter";
+import { useState } from "react";
 
 const services = [
   {
@@ -18,23 +20,23 @@ const services = [
 
 const statistics = [
   {
-    value: "2,000",
+    value: 2000,
     suffix: "+",
     label: "Trucks Handled",
   },
   {
-    value: "68,938",
+    value: 68938,
     suffix: "mts",
     label: "Material supplied",
   },
   {
-    value: "6,839",
+    value: 6839,
     suffix: "km",
     label: "Distance Covered",
     mobileLabel: "Trucks Handled",
   },
   {
-    value: "50",
+    value: 50,
     suffix: "+",
     label: "Rakes Handled",
   },
@@ -43,9 +45,11 @@ const statistics = [
 export default function HeroSection() {
   const handleExploreServices = () => {
     document
-      .getElementById("services")
+      .getElementById("core-offerings")
       ?.scrollIntoView({ behavior: "smooth" });
   };
+
+  const [statisticsVisible, setStatisticsVisible] = useState(false);
 
   return (
     <Box
@@ -137,7 +141,7 @@ export default function HeroSection() {
             }}
           >
             <RevealAnimation
-              delay={0.2}
+              delay={0.4}
               duration={2}
             >
               <Box
@@ -261,7 +265,7 @@ export default function HeroSection() {
               </Typography>
             </RevealAnimation>
             <RevealAnimation
-              delay={0.4}
+              delay={0.8}
               duration={2}
             >
               <Box
@@ -427,7 +431,7 @@ export default function HeroSection() {
               </Box>
             </RevealAnimation>
             <RevealAnimation
-              delay={0.6}
+              delay={1.2}
               duration={2}
             >
               <Button
@@ -455,7 +459,7 @@ export default function HeroSection() {
                     xs: "14px",
                     md: "16px",
                   },
-                  fontWeight: {xs:400,md:700},
+                  fontWeight: { xs: 400, md: 700 },
                   textTransform: "none",
 
                   "&:hover": {
@@ -496,8 +500,9 @@ export default function HeroSection() {
         }}
       >
         <RevealAnimation
-          delay={0.8}
-          duration={2}
+          delay={1.4}
+          // duration={1}
+          onAnimationComplete={() => setStatisticsVisible(true)}
         >
           <Box
             sx={{
@@ -517,127 +522,128 @@ export default function HeroSection() {
             }}
           >
             {statistics.map((item, index) => (
-              <RevealAnimation
-                delay={0.8+(index*0.3)}
-                // duration={2}
+              <Box
+                key={item.label}
+                sx={{
+                  position: "relative",
+                  minHeight: {
+                    xs: "98px",
+                    md: "154px",
+                  },
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  px: {
+                    xs: 2.5,
+                    sm: 4,
+                    md: 5,
+                  },
+                  borderRight: {
+                    xs:
+                      index % 2 === 0
+                        ? "1px solid rgba(25,54,94,0.08)"
+                        : "none",
+                    md:
+                      index !== statistics.length - 1
+                        ? "1px solid rgba(25,54,94,0.1)"
+                        : "none",
+                  },
+                  borderBottom: {
+                    xs:
+                      index < 2
+                        ? "1px solid rgba(25,54,94,0.08)"
+                        : "none",
+                    md: "none",
+                  },
+
+
+                }}
               >
                 <Box
-                  key={item.label}
                   sx={{
-                    position: "relative",
-                    minHeight: {
-                      xs: "98px",
-                      md: "154px",
-                    },
                     display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    px: {
-                      xs: 2.5,
-                      sm: 4,
-                      md: 5,
-                    },
-                    borderRight: {
-                      xs:
-                        index % 2 === 0
-                          ? "1px solid rgba(25,54,94,0.08)"
-                          : "none",
-                      md:
-                        index !== statistics.length - 1
-                          ? "1px solid rgba(25,54,94,0.1)"
-                          : "none",
-                    },
-                    borderBottom: {
-                      xs:
-                        index < 2
-                          ? "1px solid rgba(25,54,94,0.08)"
-                          : "none",
-                      md: "none",
-                    },
-
+                    alignItems: "baseline",
+                    gap: 0.7,
 
                   }}
                 >
-                  <Box
-                    sx={{
-                      display: "flex",
-                      alignItems: "baseline",
-                      gap: 0.7,
-
-                    }}
-                  >
-                    <Typography
-                      sx={{
-                        color: "#19365E",
-                        fontSize: {
-                          xs: "22px",
-                          md: "40px",
-                        },
-                        lineHeight: 1,
-                        fontWeight: 800,
-                        letterSpacing: "-0.5px",
-                      }}
-                    >
-                      {item.value}
-                    </Typography>
-
-                    <Typography
-                      component="span"
-                      sx={{
-                        color: "#FF8A16",
-                        fontSize: {
-                          xs: "13px",
-                          md: "20px",
-                        },
-                        lineHeight: 1,
-                        fontWeight: 700,
-                      }}
-                    >
-                      {item.suffix}
-                    </Typography>
-                  </Box>
-
                   <Typography
+                    component="div"
                     sx={{
-                      mt: {
-                        xs: 1,
-                        md: 2.2,
-                      },
                       color: "#19365E",
                       fontSize: {
-                        xs: "12px",
-                        md: "17px",
+                        xs: "22px",
+                        md: "40px",
                       },
-                      lineHeight: 1.35,
-                      fontWeight: 400,
+                      lineHeight: 1,
+                      fontWeight: 800,
+                      letterSpacing: "-0.5px",
                     }}
                   >
-                    <Box
-                      component="span"
-                      sx={{
-                        display: {
-                          xs: item.mobileLabel ? "inline" : "none",
-                          md: "none",
-                        },
-                      }}
-                    >
-                      {item.mobileLabel}
-                    </Box>
+                    <AnimatedCounter
+                      value={item.value}
+                      duration={2}
+                      delay={index * 0.15}
+                      start={statisticsVisible}
+                    />
+                  </Typography>
 
-                    <Box
-                      component="span"
-                      sx={{
-                        display: {
-                          xs: item.mobileLabel ? "none" : "inline",
-                          md: "inline",
-                        },
-                      }}
-                    >
-                      {item.label}
-                    </Box>
+                  <Typography
+                    component="span"
+                    sx={{
+                      color: "#FF8A16",
+                      fontSize: {
+                        xs: "13px",
+                        md: "20px",
+                      },
+                      lineHeight: 1,
+                      fontWeight: 700,
+                    }}
+                  >
+                    {item.suffix}
                   </Typography>
                 </Box>
-              </RevealAnimation>
+
+                <Typography
+                  sx={{
+                    mt: {
+                      xs: 1,
+                      md: 2.2,
+                    },
+                    color: "#19365E",
+                    fontSize: {
+                      xs: "12px",
+                      md: "17px",
+                    },
+                    lineHeight: 1.35,
+                    fontWeight: 400,
+                  }}
+                >
+                  <Box
+                    component="span"
+                    sx={{
+                      display: {
+                        xs: item.mobileLabel ? "inline" : "none",
+                        md: "none",
+                      },
+                    }}
+                  >
+                    {item.mobileLabel}
+                  </Box>
+
+                  <Box
+                    component="span"
+                    sx={{
+                      display: {
+                        xs: item.mobileLabel ? "none" : "inline",
+                        md: "inline",
+                      },
+                    }}
+                  >
+                    {item.label}
+                  </Box>
+                </Typography>
+              </Box>
             ))}
           </Box>
         </RevealAnimation>

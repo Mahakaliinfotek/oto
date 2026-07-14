@@ -22,7 +22,7 @@ export default function CompanyStrip({
         { logo: rse, link: "https://ransanenterprises.com/" },
         { logo: oto, link: "https://otovizag.com/" },
         { logo: mi, link: "https://mahakaliinfotek.com/" },
-        { logo: rp, link: "https://krishnaresource.com/" },
+        // { logo: rp, link: "https://krishnaresource.com/" },
         { logo: minter, link: "https://mahakaliinternational.com/" },
     ];
 

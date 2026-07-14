@@ -11,6 +11,45 @@ const fleetOwnerCards = [
         desktopOrder: 1,
         mobileOrder: 2,
     },
+    // {
+    //     id: "shipment-integrity",
+    //     title: "Shipment integrity by design",
+    //     description:
+    //         "Double-layer protection with tarpaulin and net covering, plus camera and GPS tracking. This gives route visibility and deters manipulation during transit.",
+    //     icon: "/homePage/shipment.webp",
+    //     desktopOrder: 2,
+    //     mobileOrder: 3,
+    // },
+    // {
+    //     id: "port-efficiency",
+    //     title: "On-port efficiency",
+    //     description:
+    //         "Licensed stevedoring at Vizag combined with our equipment and trained crews to improve turnaround times and cargo quality.",
+    //     icon: "/homePage/port-efficiently.webp",
+    //     desktopOrder: 3,
+    //     mobileOrder: 4,
+    // },
+    // {
+    //     id: "cargo-security",
+    //     title: "Cargo Security",
+    //     description:
+    //         "Standardized sealing, auditable hand-offs, and supervisor-led safety checks for consistent execution.",
+    //     icon: "/homePage/cargo.webp",
+    //     desktopOrder: 4,
+    //     mobileOrder: 1,
+    // },
+];
+
+const clientCards = [
+    // {
+    //     id: "fleet-owners",
+    //     title: "For fleet owners",
+    //     description:
+    //         "Spot advance payment & hassle free transactions. This fast, predictable settlement encourages bulk truck placement and long-term relationships.",
+    //     icon: "/homePage/fleet-owner.webp",
+    //     desktopOrder: 1,
+    //     mobileOrder: 2,
+    // },
     {
         id: "shipment-integrity",
         title: "Shipment integrity by design",
@@ -40,47 +79,8 @@ const fleetOwnerCards = [
     },
 ];
 
-const clientCards = [
-    {
-        id: "client-reliability",
-        title: "Reliable cargo movement",
-        description:
-            "Structured coordination, disciplined execution, and clear operational visibility across every stage of cargo movement.",
-        icon: "/homePage/client-reliability.svg",
-        desktopOrder: 1,
-        mobileOrder: 1,
-    },
-    {
-        id: "client-safety",
-        title: "Safety-led operations",
-        description:
-            "Defined processes, trained teams, and regular checks help maintain operational safety and cargo integrity.",
-        icon: "/homePage/client-safety.svg",
-        desktopOrder: 2,
-        mobileOrder: 2,
-    },
-    {
-        id: "client-coordination",
-        title: "End-to-end coordination",
-        description:
-            "Road, rail, port, and equipment operations are aligned through a single coordinated logistics workflow.",
-        icon: "/homePage/client-coordination.svg",
-        desktopOrder: 3,
-        mobileOrder: 3,
-    },
-    {
-        id: "client-execution",
-        title: "Consistent execution",
-        description:
-            "Standardized operating methods help improve predictability, turnaround time, and service quality.",
-        icon: "/homePage/client-execution.svg",
-        desktopOrder: 4,
-        mobileOrder: 4,
-    },
-];
-
 export default function DifferenceSection() {
-    const [activeTab, setActiveTab] = useState("fleet");
+    const [activeTab, setActiveTab] = useState("clients");
 
     const cards = activeTab === "fleet" ? fleetOwnerCards : clientCards;
 
@@ -210,7 +210,7 @@ export default function DifferenceSection() {
                                 },
                             }}
                         >
-                            Clients
+                            For Clients
                         </Button>
                     </Box>
                 </Box>

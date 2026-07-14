@@ -66,12 +66,13 @@ export default function Footer() {
         <Box
             sx={{
                 width: "100%",
-                bgcolor: "#043D4E",
+                bgcolor: "#193B6C",
                 color: "#E2E2E2",
                 pt: 6,
                 pb: 3,
                 px: { xs: 3, md: 8 },
                 fontFamily: "Inter",
+                borderTop:"1px solid #4F6D78",
             }}
         >
             {/* TOP SECTION */}
@@ -81,6 +82,7 @@ export default function Footer() {
                     flexDirection: { xs: "column", md: "row" },
                     justifyContent: "space-between",
                     alignItems: "flex-start",
+                    
                     gap: 5,
                     mb: 4,
                 }}
