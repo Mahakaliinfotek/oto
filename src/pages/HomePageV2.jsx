@@ -11,6 +11,8 @@ import CoreOfferingsSection from "../components/homepagev2/CoreOfferingsSection"
 import StevedoringSection from "../components/homepagev2/StevedoringSection";
 import AchievementsSection from "../components/homepagev2/AchievementsSection";
 import HeaderV2 from "../components/common/headerV2";
+import ClientsVisionSection from "../components/homepagev2/ClientsVisionSection";
+import BusinessesSection from "../components/homepagev2/BusinessesSection";
 
 export default function HomePageV2() {
   return (
@@ -31,6 +33,8 @@ export default function HomePageV2() {
       <CoreOfferingsSection />
       <StevedoringSection />
       <AchievementsSection />
+      <ClientsVisionSection />
+      <BusinessesSection />
     </Box>
   );
 }
