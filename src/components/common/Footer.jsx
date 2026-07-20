@@ -7,10 +7,35 @@ import GoogleIcon from "@mui/icons-material/Google";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
+const animatedUnderline = {
+    position: "relative",
+    display: "inline-block",
+    width: "fit-content",
+    alignSelf: "flex-start",
+    cursor: "pointer",
+
+    "&::after": {
+        content: '""',
+        position: "absolute",
+        left: 0,
+        bottom: -2,
+        width: "100%",
+        height: "1px",
+        backgroundColor: "#E2E2E2",
+        transform: "scaleX(0)",
+        transformOrigin: "left",
+        transition: "transform 0.3s ease",
+    },
+
+    "&:hover::after": {
+        transform: "scaleX(1)",
+    },
+};
+
 const config = {
     leftLinks: [
-        { label: "Join Our Team", path: "#" },
-        { label: "Feedback Form", path: "#" },
+        { label: "Join Our Team", path: "https://themahakaligroup.com/legacy-leadership" },
+        { label: "Feedback Form", path: "/feedback" },
         { label: "Terms & Conditions", path: "#" },
         { label: "Privacy Policy", path: "#" },
     ],
@@ -72,7 +97,7 @@ export default function Footer() {
                 pb: 3,
                 px: { xs: 3, md: 8 },
                 fontFamily: "Inter",
-                borderTop:"1px solid #4F6D78",
+                borderTop: "1px solid #4F6D78",
             }}
         >
             {/* TOP SECTION */}
@@ -82,7 +107,7 @@ export default function Footer() {
                     flexDirection: { xs: "column", md: "row" },
                     justifyContent: "space-between",
                     alignItems: "flex-start",
-                    
+
                     gap: 5,
                     mb: 4,
                 }}
@@ -93,9 +118,9 @@ export default function Footer() {
                         <Typography
                             key={i}
                             component="a"
-                            // href={item.path}
+                            href={item.path}
                             style={{ textDecoration: "none", color: "#E2E2E2" }}
-                            sx={{ fontSize: "15px", fontWeight: 500, cursor: "pointer" }}
+                            sx={{ fontSize: "15px", fontWeight: 500, cursor: "pointer", ...animatedUnderline }}
                         >
                             {item.label}
                         </Typography>
@@ -105,7 +130,7 @@ export default function Footer() {
                 {/* FIXED WIDTH MIDDLE SECTION */}
                 <Box sx={{ display: "flex", flexDirection: "column", gap: 3, width: { md: "380px" } }}>
                     <Box>
-                        <Typography sx={{ fontWeight: 600, fontSize: "16px", mb: 1 }}>
+                        <Typography sx={{ fontWeight: 600, fontSize: "16px", mb: 1, ...animatedUnderline }}>
                             {corporateOffice.title}
                         </Typography>
                         <Typography sx={{ fontSize: "14px", lineHeight: "22px" }}>

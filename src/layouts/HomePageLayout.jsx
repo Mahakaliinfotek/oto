@@ -3,6 +3,7 @@ import React from "react";
 import Header from "./Header";
 import { Outlet } from "react-router-dom";
 import Footer from "../components/common/Footer";
+import HeaderV2 from "../components/common/HeaderV2";
 
 export const HomePageLayout = () => {
     return (
@@ -29,6 +30,7 @@ export const HomePageLayout = () => {
                 }}
             >   
                 {/* <Header /> */}
+                <HeaderV2 />
                 <Outlet />
                 <Footer />
             </Box>

@@ -17,7 +17,7 @@ import PhoneRoundedIcon from "@mui/icons-material/PhoneRounded";
 const navigationItems = [
     {
         label: "Our Story",
-        path: "/about-us",
+        path: "https://themahakaligroup.com/about-us",
         icon: GroupsRoundedIcon,
     },
     {
@@ -26,20 +26,16 @@ const navigationItems = [
         icon: BusinessRoundedIcon,
     },
     {
-        label: "CSR Media",
-        path: "/csr-media",
+        label: "Media & CSR",
+        path: "/csr",
         icon: SmartDisplayRoundedIcon,
     },
-    {
-        label: "Sustainability",
-        path: "/sustainability",
-        icon: EnergySavingsLeafRoundedIcon,
-    },
-    {
-        label: "Contact",
-        path: "/",
-        icon: PhoneRoundedIcon,
-    },
+    // {
+    //     label: "Sustainability",
+    //     path: "/sustainability",
+    //     icon: EnergySavingsLeafRoundedIcon,
+    // },
+
 ];
 
 export default function HeaderV2() {
@@ -174,7 +170,7 @@ export default function HeaderV2() {
 
                         <Button
                             component={Link}
-                            to="#"
+                            to="/contact"
                             disableElevation
                             sx={{
                                 minWidth: 112,
