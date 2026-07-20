@@ -174,7 +174,7 @@ export default function ClientsVisionSection() {
                     >
                         <VisionIntro />
 
-                        <Box
+                        {/* <Box
                             sx={{
                                 display: "grid",
                                 gap: {
@@ -196,7 +196,7 @@ export default function ClientsVisionSection() {
                                     <VisionCard card={card} />
                                 </RevealAnimation>
                             ))}
-                        </Box>
+                        </Box> */}
                     </Box>
                 </RevealAnimation>
             </Container>
@@ -349,8 +349,8 @@ function VisionIntro() {
                     },
                 }}
             >
-                To grow our{" "}
-                <Box
+                The Vision, Mission, and Values that drive us forward.
+                {/* <Box
                     component="span"
                     sx={{
                         color: "#FF8A16",
@@ -359,7 +359,7 @@ function VisionIntro() {
                     multinational conglomerate into a global force
                 </Box>{" "}
                 in commodities and services, synonymous with trust &amp; commitment
-                worldwide.
+                worldwide. */}
             </Typography>
 
             <Box

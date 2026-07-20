@@ -15,8 +15,6 @@ const businesses = [
     id: "oto",
     logo: "/homePage/oto.webp",
     description:
-      "End-to-end bulk logistics and stevedoring experts across India’s East Coast.",
-    mobileDescription:
       "End-to-end bulk logistics & stevedoring experts.",
     path: "/businesses/oto",
   },
@@ -36,7 +34,7 @@ const businesses = [
   },
   {
     id: "mahakali-industries",
-    logo: "/homePage/mahakali-industries.webp",
+    logo: "/homePage/minter.webp",
     description:
       "Reliable coke supply with precise screening for steel industries.",
     path: "/businesses/mahakali-industries",
@@ -146,33 +144,35 @@ export default function BusinessesSection() {
           </Box>
         </RevealAnimation>
 
-        <Box
-          sx={{
-            display: "grid",
-            gridTemplateColumns: {
-              xs: "1fr",
-              md: "repeat(3, minmax(0, 1fr))",
-            },
-            gap: {
-              xs: 1.6,
-              md: 2,
-            },
-          }}
+        <RevealAnimation
+          fade
+          slide
+          direction="up"
+          distance={2}
+          duration={0.55}
+          delay={0.1}
         >
-          {businesses.map((business, index) => (
-            <RevealAnimation
-              key={business.id}
-              fade
-              slide
-              direction="up"
-              distance={24}
-              delay={index * 0.06}
-              duration={0.5}
-            >
-              <BusinessCard business={business} />
-            </RevealAnimation>
-          ))}
-        </Box>
+          <Box
+            sx={{
+              display: "grid",
+              gridTemplateColumns: {
+                xs: "1fr",
+                md: "repeat(3, minmax(0, 1fr))",
+              },
+              gap: {
+                xs: 1.6,
+                md: 2,
+              },
+            }}
+          >
+            {businesses.map((business) => (
+              <BusinessCard
+                key={business.id}
+                business={business}
+              />
+            ))}
+          </Box>
+        </RevealAnimation>
       </Container>
     </Box>
   );
@@ -182,7 +182,7 @@ function BusinessCard({ business }) {
   return (
     <Box
       component={Link}
-      to={business.path}
+      // to={business.path}
       sx={{
         position: "relative",
         display: "flex",
@@ -283,6 +283,7 @@ function BusinessCard({ business }) {
           justifyContent: "center",
           boxShadow: "0 2px 5px rgba(18,45,79,0.08)",
           transition: "transform 260ms ease, box-shadow 260ms ease",
+          overflow:"hidden"
         }}
       >
         <Box
@@ -291,11 +292,12 @@ function BusinessCard({ business }) {
           alt=""
           loading="lazy"
           sx={{
-            
+
             width: "180%",
             height: "180%",
             objectFit: "contain",
             display: "block",
+            // border:"1px solid red"
           }}
         />
       </Box>
@@ -321,28 +323,11 @@ function BusinessCard({ business }) {
             xs: 0,
             md: 1,
           },
+          mt: { xs: 1, md: 0 }
         }}
       >
         <Box
           component="span"
-          sx={{
-            display: {
-              xs: business.mobileDescription ? "inline" : "none",
-              md: "none",
-            },
-          }}
-        >
-          {business.mobileDescription}
-        </Box>
-
-        <Box
-          component="span"
-          sx={{
-            display: {
-              xs: business.mobileDescription ? "none" : "inline",
-              md: "inline",
-            },
-          }}
         >
           {business.description}
         </Box>

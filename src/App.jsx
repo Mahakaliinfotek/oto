@@ -20,12 +20,10 @@ function App() {
       <Route path="/about-us" element={<Story/>}/>
       <Route path="/" element={<HomePageLayout />}>
         <Route path="/" element={<HomePageV2 />} />
-        <Route path="/home-page-v2" element={<HomePageV2 />} />
-        
+        {/* <Route path="/home-page-v2" element={<HomePageV2 />} /> */}
         <Route path="/legacy-leadership" element={<LegacyLeadershipPage/>} />
         <Route path="/sustainability" element={<Sustainability/>} />
       </Route>
-
     </Routes>
     </>
   )
