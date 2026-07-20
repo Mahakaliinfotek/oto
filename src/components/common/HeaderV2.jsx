@@ -1,5 +1,9 @@
 import { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import {
+    Link,
+    useLocation,
+    useNavigate,
+} from "react-router-dom";
 import {
     Box,
     Button,
@@ -21,13 +25,13 @@ const navigationItems = [
         icon: GroupsRoundedIcon,
     },
     {
-        label: "Businesses",
-        path: "/businesses",
+        label: "Our Businesses",
+        path: "/#businesses",
         icon: BusinessRoundedIcon,
     },
     {
         label: "Media & CSR",
-        path: "/csr",
+        path: "https://themahakaligroup.com/csr",
         icon: SmartDisplayRoundedIcon,
     },
     // {
@@ -41,12 +45,49 @@ const navigationItems = [
 export default function HeaderV2() {
     const [drawerOpen, setDrawerOpen] = useState(false);
     const location = useLocation();
-
+    const navigate = useNavigate();
     useEffect(() => {
         setDrawerOpen(false);
     }, [location.pathname]);
 
     const isActive = (path) => location.pathname === path;
+
+    const scrollToBusinesses = () => {
+        setDrawerOpen(false);
+
+        if (location.pathname === "/") {
+            const businessesSection =
+                document.getElementById("businesses");
+
+            businessesSection?.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+            });
+
+            return;
+        }
+
+        navigate("/#businesses");
+    };
+
+    useEffect(() => {
+        if (
+            location.pathname === "/" &&
+            location.hash === "#businesses"
+        ) {
+            const timeoutId = setTimeout(() => {
+                const businessesSection =
+                    document.getElementById("businesses");
+
+                businessesSection?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                });
+            }, 100);
+
+            return () => clearTimeout(timeoutId);
+        }
+    }, [location.pathname, location.hash]);
 
     return (
         <>
@@ -125,48 +166,62 @@ export default function HeaderV2() {
                             },
                         }}
                     >
-                        {navigationItems.slice(0, 4).map((item) => (
-                            <Box
-                                key={item.path}
-                                component={Link}
-                                to={item.path}
-                                sx={{
-                                    position: "relative",
-                                    color: isActive(item.path) ? "#19365E" : "#4D607B",
-                                    fontSize: "13px",
-                                    fontWeight: isActive(item.path) ? 700 : 500,
-                                    lineHeight: 1,
-                                    textDecoration: "none",
-                                    transition: "color 220ms ease",
+                        {navigationItems.slice(0, 4).map((item) => {
+                            const isSectionLink = Boolean(item.sectionId);
 
-                                    "&::after": {
-                                        content: '""',
-                                        position: "absolute",
-                                        left: 0,
-                                        right: 0,
-                                        bottom: "-9px",
-                                        height: "2px",
-                                        borderRadius: "10px",
-                                        bgcolor: "#19365E",
-                                        transform: isActive(item.path)
-                                            ? "scaleX(1)"
-                                            : "scaleX(0)",
-                                        transformOrigin: "center",
-                                        transition: "transform 220ms ease",
-                                    },
-
-                                    "&:hover": {
-                                        color: "#19365E",
+                            return (
+                                <Box
+                                    key={item.label}
+                                    component={isSectionLink ? "button" : Link}
+                                    {...(!isSectionLink && {
+                                        to: item.path,
+                                    })}
+                                    onClick={
+                                        isSectionLink
+                                            ? scrollToBusinesses
+                                            : undefined
+                                    }
+                                    sx={{
+                                        position: "relative",
+                                        p: 0,
+                                        border: 0,
+                                        background: "none",
+                                        color: "#4D607B",
+                                        fontFamily: "inherit",
+                                        fontSize: "13px",
+                                        fontWeight: 500,
+                                        lineHeight: 1,
+                                        textDecoration: "none",
+                                        cursor: "pointer",
+                                        transition: "color 220ms ease",
 
                                         "&::after": {
-                                            transform: "scaleX(1)",
+                                            content: '""',
+                                            position: "absolute",
+                                            left: 0,
+                                            right: 0,
+                                            bottom: "-9px",
+                                            height: "2px",
+                                            borderRadius: "10px",
+                                            bgcolor: "#19365E",
+                                            transform: "scaleX(0)",
+                                            transformOrigin: "center",
+                                            transition: "transform 220ms ease",
                                         },
-                                    },
-                                }}
-                            >
-                                {item.label}
-                            </Box>
-                        ))}
+
+                                        "&:hover": {
+                                            color: "#19365E",
+
+                                            "&::after": {
+                                                transform: "scaleX(1)",
+                                            },
+                                        },
+                                    }}
+                                >
+                                    {item.label}
+                                </Box>
+                            );
+                        })}
 
                         <Button
                             component={Link}
@@ -310,49 +365,38 @@ export default function HeaderV2() {
 
                         return (
                             <Box
-                                key={item.path}
-                                component={Link}
-                                to={item.path}
-                                onClick={() => setDrawerOpen(false)}
+                                key={item.label}
+                                component={item.sectionId ? "button" : Link}
+                                {...(!item.sectionId && {
+                                    to: item.path,
+                                })}
+                                onClick={() => {
+                                    if (item.sectionId === "businesses") {
+                                        scrollToBusinesses();
+                                    } else {
+                                        setDrawerOpen(false);
+                                    }
+                                }}
                                 sx={{
                                     position: "relative",
+                                    width: "100%",
                                     minHeight: 76,
                                     px: {
                                         xs: 3.5,
                                         sm: 4,
                                     },
+                                    border: 0,
                                     display: "grid",
-                                    gridTemplateColumns: "36px minmax(0, 1fr)",
+                                    gridTemplateColumns:
+                                        "36px minmax(0, 1fr)",
                                     alignItems: "center",
                                     columnGap: 2,
-                                    color: active ? "#19365E" : "#858585",
-                                    bgcolor: active
-                                        ? "rgba(25,54,94,0.035)"
-                                        : "#FFFFFF",
+                                    color: "#858585",
+                                    bgcolor: "#FFFFFF",
+                                    fontFamily: "inherit",
+                                    textAlign: "left",
                                     textDecoration: "none",
-                                    transition:
-                                        "background-color 220ms ease, color 220ms ease",
-
-                                    "&::after": {
-                                        content: '""',
-                                        position: "absolute",
-                                        top: 0,
-                                        right: 0,
-                                        bottom: 0,
-                                        width: active ? "4px" : 0,
-                                        bgcolor: "#19365E",
-                                        transition: "width 220ms ease",
-                                    },
-
-                                    "&:hover": {
-                                        bgcolor: "rgba(25,54,94,0.045)",
-                                        color: "#19365E",
-
-                                        "& .mobile-nav-icon": {
-                                            color: "#19365E",
-                                            transform: "translateX(2px)",
-                                        },
-                                    },
+                                    cursor: "pointer",
                                 }}
                             >
                                 <Icon
