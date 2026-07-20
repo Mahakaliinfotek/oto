@@ -10,6 +10,8 @@ import { Sustainability } from './pages/Sustainability'
 import ScrollToTop from './components/common/ScrollToTop'
 import Story from './pages/Story/Story'
 import HomePageV2 from './pages/HomePageV2'
+import FeedbackForm from './pages/FeedbackForm'
+import ContactUs from './pages/ContactUs'
 function App() {
 
   return (
@@ -20,9 +22,10 @@ function App() {
       <Route path="/about-us" element={<Story/>}/>
       <Route path="/" element={<HomePageLayout />}>
         <Route path="/" element={<HomePageV2 />} />
-        {/* <Route path="/home-page-v2" element={<HomePageV2 />} /> */}
+        <Route path="/feedback" element={<FeedbackForm />} />
         <Route path="/legacy-leadership" element={<LegacyLeadershipPage/>} />
         <Route path="/sustainability" element={<Sustainability/>} />
+        <Route path="/contact" element={<ContactUs/>} />
       </Route>
     </Routes>
     </>

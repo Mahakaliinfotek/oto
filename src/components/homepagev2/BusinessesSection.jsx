@@ -9,49 +9,49 @@ const businesses = [
     logo: "/homePage/mahakali-group.webp",
     description:
       "Four decades of trusted coal and coke solutions since 1984.",
-    path: "/businesses/mahakali-group",
+    path: "https://themahakaligroup.com/",
   },
   {
     id: "oto",
     logo: "/homePage/oto.webp",
     description:
       "End-to-end bulk logistics & stevedoring experts.",
-    path: "/businesses/oto",
+    path: "https://otovizag.com/",
   },
   {
     id: "indiazona",
     logo: "/homePage/indiazona.webp",
     description:
       "Where buyers discover more and sellers grow faster",
-    path: "/businesses/indiazona",
+    path: "https://indiazona.in",
   },
   {
     id: "mahakali-infotech",
     logo: "/homePage/mahakali-infotech.webp",
     description:
       "Building reliable digital systems that power business growth.",
-    path: "/businesses/mahakali-infotech",
+    path: "https://mahakaliinfotek.com/",
   },
   {
     id: "mahakali-industries",
     logo: "/homePage/minter.webp",
     description:
       "Reliable coke supply with precise screening for steel industries.",
-    path: "/businesses/mahakali-industries",
+    path: "https://mahakaliinternational.com/",
   },
   {
     id: "rse",
     logo: "/homePage/rse.webp",
     description:
       "Powering industries with reliable coal solutions since 2003.",
-    path: "/businesses/rse",
+    path: "https://ransanenterprises.com/",
   },
   {
     id: "mun",
     logo: "/homePage/mun.webp",
     description:
       "Reliable limestone and minerals supply from Oman.",
-    path: "/businesses/mun",
+    path: "https://munminmet.om/",
   },
 ];
 
@@ -182,7 +182,7 @@ function BusinessCard({ business }) {
   return (
     <Box
       component={Link}
-      // to={business.path}
+      to={business.path}
       sx={{
         position: "relative",
         display: "flex",

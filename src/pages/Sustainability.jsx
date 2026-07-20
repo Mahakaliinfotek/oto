@@ -10,7 +10,7 @@ import PartnerWithUs from '../components/sustainability/PartnerWithUs'
 export const Sustainability = () => {
     return (
         <Box sx={{ width: "100%", bgcolor: "background.light" }}>
-            <Header isDark={false} />
+            {/* <Header isDark={false} /> */}
             <SustainabilityHero />
             <PrinciplesSection/>
             <WhatWeDo />
