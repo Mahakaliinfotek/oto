@@ -9,7 +9,11 @@ import rp from "../../assets/images/companyStrip/rp.png";
 import rse from "../../assets/images/companyStrip/rse.png";
 import minter from "../../assets/images/companyStrip/minter.png";
 
-export default function CompanyStrip() {
+export default function CompanyStrip({
+    speed = "30",
+    height = { xs: 40, md: 70 },
+    width = "100%"
+}) {
     const items = [
         { logo: indiazona, link: "https://indiazona.in" },
         { logo: me, link: "https://mahakaliestate.com/" },
@@ -18,8 +22,8 @@ export default function CompanyStrip() {
         { logo: rse, link: "https://ransanenterprises.com/" },
         { logo: oto, link: "https://otovizag.com/" },
         { logo: mi, link: "https://mahakaliinfotek.com/" },
-        { logo: rp, link: "https://krishnaresource.com/" },
-        { logo: minter, link: "https://mahakaliinternational.com/"},
+        // { logo: rp, link: "https://krishnaresource.com/" },
+        { logo: minter, link: "https://mahakaliinternational.com/" },
     ];
 
     const loopItems = [...items, ...items]; // Duplicate for infinite loop
@@ -27,7 +31,7 @@ export default function CompanyStrip() {
     return (
         <Box
             sx={{
-                width: "100%",
+                width: width,
                 overflow: "hidden",
                 background: "#fff",
                 py: 2,
@@ -46,7 +50,7 @@ export default function CompanyStrip() {
                     width: "max-content",
                     whiteSpace: "nowrap",
 
-                    animation: "marquee 30s linear infinite",
+                    animation: `marquee ${speed}s linear infinite`,
 
                     "@keyframes marquee": {
                         "0%": { transform: "translateX(0)" },
@@ -61,7 +65,7 @@ export default function CompanyStrip() {
                         src={item.logo}
                         onClick={() => window.open(item.link, "_blank")}
                         sx={{
-                            height: { xs: 40, md: 70 },
+                            height: height,
                             mx: 4,
                             cursor: "pointer",
                             objectFit: "contain",

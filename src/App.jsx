@@ -9,6 +9,7 @@ import LegacyLeadershipPage from './pages/LegacyLeadershipPage'
 import { Sustainability } from './pages/Sustainability'
 import ScrollToTop from './components/common/ScrollToTop'
 import Story from './pages/Story/Story'
+import HomePageV2 from './pages/HomePageV2'
 function App() {
 
   return (
@@ -18,12 +19,11 @@ function App() {
       <Route path="/story" element={<Story/>}/>
       <Route path="/about-us" element={<Story/>}/>
       <Route path="/" element={<HomePageLayout />}>
-        <Route path="/" element={<HomePage />} />
-        
+        <Route path="/" element={<HomePageV2 />} />
+        {/* <Route path="/home-page-v2" element={<HomePageV2 />} /> */}
         <Route path="/legacy-leadership" element={<LegacyLeadershipPage/>} />
         <Route path="/sustainability" element={<Sustainability/>} />
       </Route>
-
     </Routes>
     </>
   )
