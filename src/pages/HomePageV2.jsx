@@ -12,6 +12,7 @@ import StevedoringSection from "../components/homepagev2/StevedoringSection";
 import AchievementsSection from "../components/homepagev2/AchievementsSection";
 import ClientsVisionSection from "../components/homepagev2/ClientsVisionSection";
 import BusinessesSection from "../components/homepagev2/BusinessesSection";
+import LegacyMediaSection from "../components/homepagev2/LegacyMediaSection";
 
 export default function HomePageV2() {
   return (
@@ -34,6 +35,7 @@ export default function HomePageV2() {
       <AchievementsSection />
       <ClientsVisionSection />
       <BusinessesSection />
+      <LegacyMediaSection />
     </Box>
   );
 }
