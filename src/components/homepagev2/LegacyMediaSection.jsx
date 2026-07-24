@@ -155,7 +155,7 @@ export default function LegacyMediaSection() {
                       fontWeight: 700,
                     }}
                   >
-                    40
+                    45
                   </Typography>
                   <Typography
                     component="span"
