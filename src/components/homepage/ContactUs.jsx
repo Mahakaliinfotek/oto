@@ -35,7 +35,7 @@ const ContactUs = () => {
         }),
         onSubmit: async (values, { resetForm, setSubmitting }) => {
             try {
-                await axios.post("https://api-dev.indiazona.in/user-service/public/email-enquiry", 
+                await axios.post("https://orange-manatee-552356.hostingersite.com/api/send-email", 
                 // await axios.post("http://localhost:8002/api/public/email-enquiry",
                     {
                         name: values.name,

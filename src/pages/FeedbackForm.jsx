@@ -121,7 +121,8 @@ const FeedbackForm = () => {
                 };
 
                 const response = await axios.post(
-                    "https://api-dev.indiazona.in/user-service/public/email-enquiry",
+                    "https://orange-manatee-552356.hostingersite.com/api/send-email",
+                    // "http://localhost:5000/api/send-email",
                     payload,
                     {
                         headers: {

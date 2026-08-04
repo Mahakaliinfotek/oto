@@ -19,7 +19,7 @@ import axios from "axios";
 import { toast } from "react-toast";
 
 const API_URL =
-  "https://api-dev.indiazona.in/user-service/public/email-enquiry";
+  "https://orange-manatee-552356.hostingersite.com/api/send-email";
 
 const colors = {
   primary: "#193B6C",
